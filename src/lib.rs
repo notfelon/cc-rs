@@ -1815,9 +1815,9 @@ impl Build {
         if !is_assembler_msvc || !is_arm {
             cmd.arg("-c");
         }
-        if self.cuda && self.cuda_file_count() > 1 {
-            cmd.arg("--device-link");
-        }
+        // if self.cuda && self.cuda_file_count() > 1 {
+        //     cmd.arg("--device-link");
+        // }
         if is_asm {
             cmd.args(self.asm_flags.iter().map(std::ops::Deref::deref));
         }
